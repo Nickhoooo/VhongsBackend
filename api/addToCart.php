@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/cors.php";
+require 'cors.php';
 include "../config/db.php";
 
 session_start();
