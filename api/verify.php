@@ -1,9 +1,8 @@
 <?php
-header("Access-Control-Allow-Origin: https://vhong-drip.vercel.app");
-header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Origin: *"); // Allow all domains
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
-header("Access-Control-Allow-Credentials: true");
-header("Content-Type: application/json");
+header("Content-Type: application/json; charset=UTF-8");
 include __DIR__ . "/../config/db.php";
 
 if (isset($_GET['code'])) {
