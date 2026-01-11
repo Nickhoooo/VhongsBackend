@@ -1,24 +1,21 @@
 <?php
-header("Access-Control-Allow-Origin: https://vhong-drip.vercel.app");
-header("Access-Control-Allow-Credentials: true");
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
-header("Content-Type: application/json");
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
-include __DIR__ . "/../config/db.php";
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 // Start session BEFORE any headers or output
 ini_set('session.cookie_samesite', 'Lax');
 ini_set('session.cookie_secure', '0');
-
 session_start();
+
+include __DIR__ . "/../config/db.php";
+
+header("Access-Control-Allow-Origin: https://vhong-drip-17or.vercel.app");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
+
+
 
 require __DIR__ . "/../PHPMailer/Exception.php";
 require __DIR__ . "/../PHPMailer/PHPMailer.php";
