@@ -24,7 +24,7 @@ if (isset($_GET['code'])) {
         $update_stmt = $conn->prepare($update);
         $update_stmt->bind_param("s", $code);
         $update_stmt->execute();
-        echo "Your email has been verified! You can now <a href='https://vhong-drip-17or.vercel.app/login'>login</a>.";
+        echo "Your email has been verified! You can now <a href=' https://vhong-drip.vercel.app/login'>login</a>.";
     } else {
         echo "Invalid or expired verification link.";
     }

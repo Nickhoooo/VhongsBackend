@@ -8,20 +8,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
+
 include "../config/db.php";
+include "../config/config.php"; 
 
 
-// Query all products
 $sql = "SELECT * FROM products";
 $result = $conn->query($sql);
 
 $products = [];
 while($row = $result->fetch_assoc()){
-    // Prepend full URL to the image field
-    $row['image'] = "https://vhongdrip.free.nf/images/" . $row['image'];
+
+    $row['image'] = BASE_IMAGE_URL . $row['image'];
     $products[] = $row;
 }
 
-// Output JSON
+
 echo json_encode($products);
 ?>

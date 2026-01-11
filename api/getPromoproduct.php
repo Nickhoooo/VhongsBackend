@@ -8,10 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
     exit();
 }
+
 include "../config/db.php";
-
-
-$baseImageUrl = "https://vhongdrip.free.nf/images/"; 
+include "../config/config.php"; 
 
 if(isset($_GET['id'])){
     $id = intval($_GET['id']);
@@ -22,8 +21,7 @@ if(isset($_GET['id'])){
     $promo = $result->fetch_assoc();
 
     if ($promo) {
-        // prepend full URL to image
-        $promo['image'] = $baseImageUrl . $promo['image'];
+        $promo['image'] = BASE_IMAGE_URL . $promo['image']; 
     }
 
     echo json_encode($promo);
@@ -32,8 +30,7 @@ if(isset($_GET['id'])){
     $result = $conn->query("SELECT * FROM promo");
     $promo = [];
     while($row = $result->fetch_assoc()){
-        // prepend full URL to image
-        $row['image'] = $baseImageUrl . $row['image'];
+        $row['image'] = BASE_IMAGE_URL . $row['image']; 
         $promo[] = $row;
     }
     echo json_encode($promo);
