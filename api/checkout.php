@@ -1,4 +1,9 @@
 <?php
+header("Access-Control-Allow-Origin: https://vhong-drip-17or.vercel.app");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -8,15 +13,6 @@ ini_set('session.cookie_secure', '0');
 session_start();
 
 include __DIR__ . "/../config/db.php";
-
-header("Access-Control-Allow-Origin: https://vhong-drip-17or.vercel.app");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Access-Control-Allow-Credentials: true");
-header("Content-Type: application/json");
-
-
-
 require __DIR__ . "/../PHPMailer/Exception.php";
 require __DIR__ . "/../PHPMailer/PHPMailer.php";
 require __DIR__ . "/../PHPMailer/SMTP.php";

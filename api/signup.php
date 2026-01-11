@@ -1,10 +1,10 @@
 <?php
-include __DIR__ . "/../config/db.php";
-
-header("Access-Control-Allow-Origin: https://vhong-drip-17or.vercel.app");
+header("Access-Control-Allow-Origin: https://vhong-drip.vercel.app");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
-
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
+include __DIR__ . "/../config/db.php";
 
 session_start();
 

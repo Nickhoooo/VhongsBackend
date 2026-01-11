@@ -2,7 +2,6 @@
 header("Access-Control-Allow-Origin: https://vhong-drip-17or.vercel.app");
 header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Content-Type");
-
 include "../config/db.php";
 
 $user_id = $_POST['user_id'] ?? null;

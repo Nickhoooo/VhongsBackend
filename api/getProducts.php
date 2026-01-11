@@ -1,8 +1,10 @@
 <?php
+header("Access-Control-Allow-Origin: https://vhong-drip.vercel.app");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Content-Type: application/json");
 include "../config/db.php";
 
-header('Content-Type: application/json');
-header("Access-Control-Allow-Origin: https://vhong-drip-17or.vercel.app");
  // allow requests from React
 
 $sql = "SELECT * FROM products";

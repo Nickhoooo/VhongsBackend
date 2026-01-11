@@ -1,16 +1,17 @@
 <?php
-// Start session BEFORE any headers or output
+header("Access-Control-Allow-Origin: https://vhong-drip.vercel.app");
+header("Access-Control-Allow-Methods: POST");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Access-Control-Allow-Credentials: true");
+header("Content-Type: application/json");
+
 ini_set('session.cookie_samesite', 'Lax');
 ini_set('session.cookie_secure', '0');
 session_start();
 
 include __DIR__ . "/../config/db.php";
 
-header("Access-Control-Allow-Origin: https://vhong-drip-17or.vercel.app");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Access-Control-Allow-Credentials: true");
-header("Content-Type: application/json");
+
 
 
 if (isset($_POST['login'])) {
